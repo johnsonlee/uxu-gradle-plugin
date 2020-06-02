@@ -50,7 +50,7 @@ class UxuPlugin : Plugin<Project> {
                     """
                     #!/bin/sh
                     
-                    exec java -jar $0 "$@"
+                    exec java ${'$'}JAVA_OPTS -jar $0 "$@"
                     
                     
                     """.trimIndent().byteInputStream().copyTo(output)
